@@ -1,2 +1,6 @@
-# biosite
-CSD340 biosite assignment
+# CSD 340 Web Development with HTML and CSS
+
+## Contributors
+
+- Christine Mazhata
+- Mirach Erkol

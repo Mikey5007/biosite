@@ -1,0 +1,150 @@
+/* =========================
+   Atomic Design Foundation
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F2F3F6;
+    color: #1F1F1F;
+    line-height: 1.6;
+}
+
+/* Typography Scale */
+
+h1 {
+    text-align: center;
+    color: #1B0273;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin: 30px 0;
+}
+
+h2 {
+    text-align: center;
+    color: #6F04D9;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #3866F2;
+    font-size: 1.2rem;
+}
+
+p {
+    max-width: 700px;
+}
+
+/* =========================
+   Hero Image
+========================= */
+
+.hero {
+    display: block;
+    margin: 40px auto;
+    max-width: 400px;
+    border-radius: 12px;
+}
+
+/* =========================
+   Navigation Section
+========================= */
+
+.nav-section {
+    background-color: #D2D6DD;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1B0273;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-links img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.nav-links p {
+    margin-top: 12px;
+}
+
+/* =========================
+   About Page
+========================= */
+
+.portrait {
+    display: block;
+    margin: 30px auto;
+    max-width: 300px;
+    border-radius: 12px;
+}
+
+.content-box {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Hobbies Page
+========================= */
+
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.hobby-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    background-color: #D2D6DD;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+}
+
+footer a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1B0273;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #6F04D9;
+}
