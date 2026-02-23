@@ -1,39 +1,106 @@
 /* =========================
-   Atomic Design Foundation
+   Global Base Styling
 ========================= */
 
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #F2F3F6;
+    background: linear-gradient(to bottom, #F2F3F6 70%, #E6E8F2);
     color: #1F1F1F;
     line-height: 1.6;
+    animation: fadeIn 0.8s ease-in;
 }
 
-/* Typography Scale */
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* =========================
+   Typography
+========================= */
 
 h1 {
     text-align: center;
-    color: #1B0273;
+    color: #FFFFFF;
     font-size: 2.5rem;
-    letter-spacing: 1px;
-    margin: 30px 0;
+    margin: 0;
 }
 
 h2 {
     text-align: center;
     color: #6F04D9;
     font-size: 1.8rem;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3866F2;
+    margin: 10px auto 0;
+    border-radius: 5px;
 }
 
 h3 {
     color: #3866F2;
     font-size: 1.2rem;
+    margin-top: 0;
 }
 
 p {
-    max-width: 700px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   Header
+========================= */
+
+header {
+    background-color: #1B0273;
+    padding: 25px 10px;
+    text-align: center;
+}
+
+/* Navigation with Animated Underline */
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: #05C7F2;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   Main Layout
+========================= */
+
+main {
+    padding: 40px 20px;
 }
 
 /* =========================
@@ -44,16 +111,17 @@ p {
     display: block;
     margin: 40px auto;
     max-width: 400px;
-    border-radius: 12px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* =========================
-   Navigation Section
+   Landing Navigation Section
 ========================= */
 
 .nav-section {
     background-color: #D2D6DD;
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -68,24 +136,19 @@ p {
     text-decoration: none;
     color: #1B0273;
     font-weight: bold;
-    text-align: center;
 }
 
 .nav-links img {
     width: 230px;
     height: 230px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-links img:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-.nav-links p {
-    margin-top: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* =========================
@@ -96,35 +159,70 @@ p {
     display: block;
     margin: 30px auto;
     max-width: 300px;
-    border-radius: 12px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 .content-box {
-    max-width: 800px;
-    margin: 30px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================
-   Hobbies Page
+   Hobbies Page (Card Style)
 ========================= */
 
 .hobby-item {
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin: 50px auto;
-    max-width: 900px;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px auto;
+    max-width: 1000px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.hobby-item figure {
+    margin: 0;
+    flex: 0 0 250px;
 }
 
 .hobby-item img {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px;
+}
+
+.hobby-item div {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* =========================
+   Figure Styling
+========================= */
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    color: #6E6E6E;
+    margin-top: 10px;
 }
 
 /* =========================
@@ -133,16 +231,29 @@ p {
 
 footer {
     background-color: #D2D6DD;
-    text-align: center;
-    padding: 25px;
+    padding: 30px 10px;
     margin-top: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer p:last-child {
+    display: flex;
+    gap: 40px;
 }
 
 footer a {
-    margin: 0 15px;
     text-decoration: none;
     color: #1B0273;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
